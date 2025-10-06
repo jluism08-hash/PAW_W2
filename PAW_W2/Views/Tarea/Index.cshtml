@@ -1,0 +1,82 @@
+﻿@using PAW_W2.Models;
+@model IEnumerable<Tarea>
+@{ ViewBag.Title = "Listado"; }
+@{ var proms = ViewBag.Prom as IDictionary<int, double>; }
+
+<h2 class="text-center mb-4">Tareas</h2>
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <input id="q" class="form-control w-50" placeholder="Buscar..." />
+    @Html.ActionLink("Agregar", "Create", "Tarea", null, new { @class = "btn btn-success px-4" })
+</div>
+
+<div class="card shadow-sm">
+    <div class="card-body">
+        <table class="table table-hover table-striped align-middle mb-0">
+            <thead class="table-dark">
+                <tr>
+                    <th>Id</th>
+                    <th>Título</th>
+                    <th>Fecha</th>
+                    <th>Prom.</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model != null)
+                {
+                    foreach (var t in Model)
+                    {
+                        <tr data-cat="@t.Categoria">
+                            <td>@t.Id</td>
+                            <td>@Html.ActionLink(t.Titulo, "Detail", "Tarea", new { id = t.Id }, new { @class = "text-decoration-none" })</td>
+                            <td>@t.Fecha</td>
+                            <td>@(proms !=null && proms.ContainsKey(t.Id) ? proms[t.Id].ToString("0.0") : "-")</td>
+                            <td>
+                                @if (Session["UserId"] != null && (string)Session["UserId"] == t.AutorId)
+                                {
+                                    @Html.ActionLink("Editar", "Edit", "Tarea", new { id = t.Id }, new { @class = "btn btn-sm btn-outline-primary me-1" })
+                                    @Html.ActionLink("Eliminar", "Delete", "Tarea", new { id = t.Id }, new { @class = "btn btn-sm btn-outline-danger" })
+                                }
+                                else
+                                {
+                                    <span>-</span>
+                                }
+                            </td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@section scripts{
+    <script>
+        $(function () {
+            const keyFilter = 'flt_q';  // key para filtro de búsqueda
+            const $q = $('#q');         // input de búsqueda
+
+            $q.val(localStorage.getItem(keyFilter) || ''); // restaurar valor previo (si quedó)
+
+            function apply() {
+                const v = $.trim($q.val()).toLowerCase();   // valor a buscar
+                $('tbody tr').each(function() {                  // recorrer filas
+                    const ok = !v || $(this).text().toLowerCase().indexOf(v) > -1;  // ok si coincide o v vacío
+                    $(this).toggle(ok);                     // mostrar/ocultar fila
+                });
+            }
+
+            apply();                                        // aplicar filtro ahora, primera entrada
+            $q.on('input', function() {
+                localStorage.setItem(keyFilter, this.value);// guardar valor en localStorage
+                apply();                                    // aplicar filtro en cada entrada
+            });
+
+            localStorage.removeItem('flt_cat');             // limpiar filtro de categoría (si quedó)
+        });
+    </script>
+}
+
+
+

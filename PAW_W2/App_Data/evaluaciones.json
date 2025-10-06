@@ -1,0 +1,50 @@
+[
+  {
+    "Id": 1,
+    "TareaId": 6,
+    "UsuarioId": "admin",
+    "Puntuacion": 5,
+    "Comentario": "Bueno",
+    "Fecha": "2025-10-05T15:55:30.7357505-06:00"
+  },
+  {
+    "Id": 2,
+    "TareaId": 6,
+    "UsuarioId": "admin",
+    "Puntuacion": 3,
+    "Comentario": "Bueno",
+    "Fecha": "2025-10-05T15:55:49.3923264-06:00"
+  },
+  {
+    "Id": 3,
+    "TareaId": 7,
+    "UsuarioId": "admin",
+    "Puntuacion": 2,
+    "Comentario": "",
+    "Fecha": "2025-10-05T15:56:50.8946051-06:00"
+  },
+  {
+    "Id": 4,
+    "TareaId": 7,
+    "UsuarioId": "admin",
+    "Puntuacion": 1,
+    "Comentario": "",
+    "Fecha": "2025-10-05T16:00:03.6522679-06:00"
+  },
+  {
+    "Id": 5,
+    "TareaId": 9,
+    "UsuarioId": "admin",
+    "Puntuacion": 2,
+    "Comentario": "",
+    "Fecha": "2025-10-05T20:06:04.5479311-06:00"
+  },
+  {
+    "Id": 6,
+    "TareaId": 8,
+    "UsuarioId": "admin",
+    "Puntuacion": 5,
+    "Comentario": "Muy buena",
+    "Fecha": "2025-10-06T13:38:43.6896579-06:00"
+  }
+]

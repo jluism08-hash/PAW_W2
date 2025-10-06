@@ -1,0 +1,72 @@
+[
+  {
+    "Id": 1,
+    "AutorId": "anon",
+    "Titulo": "a",
+    "Descripcion": "a",
+    "Lenguajes": "a",
+    "UrlRepo": "a",
+    "Categoria": "a",
+    "Fecha": "2025-10-03T15:25:05.2436883-06:00"
+  },
+  {
+    "Id": 2,
+    "AutorId": "anon",
+    "Titulo": "a",
+    "Descripcion": "a",
+    "Lenguajes": "a",
+    "UrlRepo": "a",
+    "Categoria": "a",
+    "Fecha": "2025-10-03T15:28:48.6079079-06:00"
+  },
+  {
+    "Id": 4,
+    "AutorId": "admin",
+    "Titulo": "4",
+    "Descripcion": "4",
+    "Lenguajes": "4",
+    "UrlRepo": "4",
+    "Categoria": "4",
+    "Fecha": "2025-10-05T15:32:54.4253718-06:00"
+  },
+  {
+    "Id": 5,
+    "AutorId": "admin",
+    "Titulo": "5",
+    "Descripcion": "5",
+    "Lenguajes": "5",
+    "UrlRepo": "5",
+    "Categoria": "5",
+    "Fecha": "2025-10-05T15:36:44.1858095-06:00"
+  },
+  {
+    "Id": 6,
+    "AutorId": "admin",
+    "Titulo": "7",
+    "Descripcion": "7",
+    "Lenguajes": "7",
+    "UrlRepo": "7",
+    "Categoria": "7",
+    "Fecha": "2025-10-05T15:50:24.2916238-06:00"
+  },
+  {
+    "Id": 7,
+    "AutorId": "admin",
+    "Titulo": "9",
+    "Descripcion": "9",
+    "Lenguajes": "9",
+    "UrlRepo": "9",
+    "Categoria": "9",
+    "Fecha": "2025-10-05T15:56:06.2634536-06:00"
+  },
+  {
+    "Id": 8,
+    "AutorId": "admin",
+    "Titulo": "Pruebad",
+    "Descripcion": "Pruebas",
+    "Lenguajes": "C#",
+    "UrlRepo": "login",
+    "Categoria": "MOvil",
+    "Fecha": "2025-10-06T13:38:24.76251-06:00"
+  }
+]

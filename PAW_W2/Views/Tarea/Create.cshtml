@@ -1,0 +1,94 @@
+﻿@model PAW_W2.Models.Tarea
+@{ ViewBag.Title = "Agregar Nueva"; }
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-6">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h2 class="text-center mb-4">Crear Tarea</h2>
+
+                    <form id="frm">
+                        <div class="mb-3">
+                            <label for="Titulo" class="form-label fw-bold">Título</label>
+                            <input name="Titulo" id="Titulo" class="form-control" placeholder="Título" required />
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="Descripcion" class="form-label fw-bold">Descripción</label>
+                            <textarea name="Descripcion" id="Descripcion" class="form-control" rows="3" placeholder="Descripción" required></textarea>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="Lenguajes" class="form-label fw-bold">Lenguajes</label>
+                            <input name="Lenguajes" id="Lenguajes" class="form-control" placeholder="C#, JS, etc." />
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="UrlRepo" class="form-label fw-bold">URL del Repositorio</label>
+                            <input name="UrlRepo" id="UrlRepo" class="form-control" placeholder="https://..." />
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="Categoria" class="form-label fw-bold">Categoría</label>
+                            <input name="Categoria" id="Categoria" class="form-control" placeholder="Web / Móvil / API / etc." />
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-100">Guardar</button>
+                    </form>
+
+                    <div id="msg" class="mt-3 text-center fw-bold"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+<script>
+$(function () {
+    const KEY='draft_tarea';
+    const $frm = $('#frm');
+
+    try{
+        const d = localStorage.getItem(KEY);
+        if(d){
+            const x = JSON.parse(d);
+            for (const k in x) $frm.find('[name="'+k+'"]').val(x[k]);
+        }
+    } catch (e) {
+    }
+
+    $frm.on('input change', function(){
+        const data = {};
+        $frm.serializeArray().forEach(p => data[p.name]=p.value);
+        localStorage.setItem(KEY, JSON.stringify(data));
+    });
+
+    $frm.on('submit', function(e){
+        e.preventDefault();
+        const titulo = $.trim($frm.find('[name="Titulo"]').val());
+        const desc   = $.trim($frm.find('[name="Descripcion"]').val());
+        if (!titulo || !desc) {
+            $('#msg').text('Título y Descripción requeridos'); return;
+        }
+
+        $.ajax({
+            url: '@Url.Action("CreateAjax","Tarea")',
+            type: 'POST',
+            data: $frm.serialize(),
+            success: function(x){
+                if (!x.ok) {
+                    $('#msg').text(x.msg || 'Error');
+                    return;
+                }
+                localStorage.removeItem(KEY);
+                alert('Guardado #'+x.id);
+                window.location='@Url.Action("Index","Tarea")';
+            },
+            error: function(){ $('#msg').text('Error'); }
+        });
+    });
+});
+
+</script>
+}
