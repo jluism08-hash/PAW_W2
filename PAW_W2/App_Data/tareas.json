@@ -50,16 +50,6 @@
     "Fecha": "2025-10-05T15:50:24.2916238-06:00"
   },
   {
-    "Id": 7,
-    "AutorId": "admin",
-    "Titulo": "9",
-    "Descripcion": "9",
-    "Lenguajes": "9",
-    "UrlRepo": "9",
-    "Categoria": "9",
-    "Fecha": "2025-10-05T15:56:06.2634536-06:00"
-  },
-  {
     "Id": 8,
     "AutorId": "admin",
     "Titulo": "Pruebad",
@@ -68,5 +58,15 @@
     "UrlRepo": "login",
     "Categoria": "MOvil",
     "Fecha": "2025-10-06T13:38:24.76251-06:00"
+  },
+  {
+    "Id": 9,
+    "AutorId": "admin",
+    "Titulo": "Pruebas Ejemplo",
+    "Descripcion": "Pruebas de funcionamiento",
+    "Lenguajes": "JS",
+    "UrlRepo": "https://github.com/",
+    "Categoria": "Web",
+    "Fecha": "2025-10-06T14:35:58.8007759-06:00"
   }
 ]

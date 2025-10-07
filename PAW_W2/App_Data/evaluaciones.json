@@ -46,5 +46,21 @@
     "Puntuacion": 5,
     "Comentario": "Muy buena",
     "Fecha": "2025-10-06T13:38:43.6896579-06:00"
+  },
+  {
+    "Id": 7,
+    "TareaId": 6,
+    "UsuarioId": "admin",
+    "Puntuacion": 3,
+    "Comentario": "Falta un poco más",
+    "Fecha": "2025-10-06T14:34:48.9537247-06:00"
+  },
+  {
+    "Id": 8,
+    "TareaId": 9,
+    "UsuarioId": "admin",
+    "Puntuacion": 3,
+    "Comentario": "Bueno",
+    "Fecha": "2025-10-06T16:50:54.1665874-06:00"
   }
 ]

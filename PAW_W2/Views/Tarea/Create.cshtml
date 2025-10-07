@@ -69,7 +69,8 @@ $(function () {
         const titulo = $.trim($frm.find('[name="Titulo"]').val());
         const desc   = $.trim($frm.find('[name="Descripcion"]').val());
         if (!titulo || !desc) {
-            $('#msg').text('Título y Descripción requeridos'); return;
+            $('#msg').text('Título y Descripción requeridos');
+            return;
         }
 
         $.ajax({
@@ -82,7 +83,7 @@ $(function () {
                     return;
                 }
                 localStorage.removeItem(KEY);
-                alert('Guardado #'+x.id);
+                alert('Tarea Almacenada #'+x.id);
                 window.location='@Url.Action("Index","Tarea")';
             },
             error: function(){ $('#msg').text('Error'); }
